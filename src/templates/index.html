@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smartphone Addiction - Model Prediction</title>
+</head>
+<body>
+    <h2>Predicción de Adicción al Smartphone</</h2>
+    
+   <form action="/predict" method="post">
+
+    Age: <input type="number" name="age"><br><br>
+
+    Daily screen time:
+    <input type="number" step="any" name="daily_screen_time_hours"><br><br>
+
+    Social media hours:
+    <input type="number" step="any" name="social_media_hours"><br><br>
+
+    Gaming hours:
+    <input type="number" step="any" name="gaming_hours"><br><br>
+
+    Work/study hours:
+    <input type="number" step="any" name="work_study_hours"><br><br>
+
+    Sleep hours:
+    <input type="number" step="any" name="sleep_hours"><br><br>
+
+    Notifications per day:
+    <input type="number" name="notifications_per_day"><br><br>
+
+    App opens per day:
+    <input type="number" name="app_opens_per_day"><br><br>
+
+    Weekend screen time:
+    <input type="number" step="any" name="weekend_screen_time"><br><br>
+
+    Gender Male (1 or 0):
+    <input type="number" name="gender_Male"><br><br>
+
+    Gender Other (1 or 0):
+    <input type="number" name="gender_Other"><br><br>
+
+    Stress level Low (1 or 0):
+    <input type="number" name="stress_level_Low"><br><br>
+
+    Stress level Medium (1 or 0):
+    <input type="number" name="stress_level_Medium"><br><br>
+
+    Academic work impact Yes (1 or 0):
+    <input type="number" name="academic_work_impact_Yes"><br><br>
+
+    <input type="submit" value="Predict">
+
+</form>
+    
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
