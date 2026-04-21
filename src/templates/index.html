@@ -1,60 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Smartphone Addiction - Model Prediction</title>
+    <title>Predicción de Adicción al Smartphone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #969696;
+        }
+        form {
+            background-color: #d68f1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #000000;
+        }
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #171616;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #00ff33;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
+
 <body>
-    <h2>Predicción de Adicción al Smartphone</</h2>
+    <h2>Introduce los valores</h2>
     
-   <form action="/predict" method="post">
+    <!-- IMPORTANTE: action="/predict" -->
+    <form action="/predict" method="post">
 
-    Age: <input type="number" name="age"><br><br>
+        Edad:
+        <input type="number" name="age" required><br><br>
 
-    Daily screen time:
-    <input type="number" step="any" name="daily_screen_time_hours"><br><br>
+        Tiempo diario en pantalla (horas):
+        <input type="number" step="any" name="daily_screen_time_hours" required><br><br>
 
-    Social media hours:
-    <input type="number" step="any" name="social_media_hours"><br><br>
+        Horas en redes sociales:
+        <input type="number" step="any" name="social_media_hours" required><br><br>
 
-    Gaming hours:
-    <input type="number" step="any" name="gaming_hours"><br><br>
+        Horas de gaming:
+        <input type="number" step="any" name="gaming_hours" required><br><br>
 
-    Work/study hours:
-    <input type="number" step="any" name="work_study_hours"><br><br>
+        Horas de trabajo/estudio:
+        <input type="number" step="any" name="work_study_hours" required><br><br>
 
-    Sleep hours:
-    <input type="number" step="any" name="sleep_hours"><br><br>
+        Horas de sueño:
+        <input type="number" step="any" name="sleep_hours" required><br><br>
 
-    Notifications per day:
-    <input type="number" name="notifications_per_day"><br><br>
+        Notificaciones por día:
+        <input type="number" name="notifications_per_day" required><br><br>
 
-    App opens per day:
-    <input type="number" name="app_opens_per_day"><br><br>
+        Aperturas de apps por día:
+        <input type="number" name="app_opens_per_day" required><br><br>
 
-    Weekend screen time:
-    <input type="number" step="any" name="weekend_screen_time"><br><br>
+        Uso en fin de semana:
+        <input type="number" step="any" name="weekend_screen_time" required><br><br>
 
-    Gender Male (1 or 0):
-    <input type="number" name="gender_Male"><br><br>
+        Género masculino (1 = sí, 0 = no):
+        <input type="number" name="gender_Male" required><br><br>
 
-    Gender Other (1 or 0):
-    <input type="number" name="gender_Other"><br><br>
+        Género otro (1 = sí, 0 = no):
+        <input type="number" name="gender_Other" required><br><br>
 
-    Stress level Low (1 or 0):
-    <input type="number" name="stress_level_Low"><br><br>
+        Estrés bajo (1 = sí, 0 = no):
+        <input type="number" name="stress_level_Low" required><br><br>
 
-    Stress level Medium (1 or 0):
-    <input type="number" name="stress_level_Medium"><br><br>
+        Estrés medio (1 = sí, 0 = no):
+        <input type="number" name="stress_level_Medium" required><br><br>
 
-    Academic work impact Yes (1 or 0):
-    <input type="number" name="academic_work_impact_Yes"><br><br>
+        Impacto académico (1 = sí, 0 = no):
+        <input type="number" name="academic_work_impact_Yes" required><br><br>
 
-    <input type="submit" value="Predict">
+        <input type="submit" value="Predecir">
 
-</form>
+    </form>
     
     {% if prediction != None %}
-        <h3>Prediction: {{ prediction }}</h3>
+        <h3>Resultado: {{ prediction }}</h3>
     {% endif %}
 </body>
 </html>
